@@ -1,0 +1,35 @@
+{
+  "name": "box-parallax-scroll",
+  "version": "1.0.0",
+  "description": "A library for giving a parallax scrolling effect to elements (div, img, video etc)",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "clean": "rimraf .cache example/test-dist build",
+    "dev": "parcel example/client.html --public-url './' --out-dir example/test-dist",
+    "build": "parcel build src/index.js --out-dir build"
+  },
+  "files": [
+    "build",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AneekRahman/box-parallax-scroll.git"
+  },
+  "keywords": [
+    "parallax",
+    "scroll",
+    "effect",
+    "image"
+  ],
+  "author": "Muhammad Aneek Rahman <hi@baalish.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AneekRahman/box-parallax-scroll/issues"
+  },
+  "homepage": "https://github.com/AneekRahman/box-parallax-scroll#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}

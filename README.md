@@ -1,5 +1,7 @@
 # box-parallax-scroll
 
+### What is this?
+
 A library for giving a parallax scrolling effect to elements (div, img, video etc).
 
 Also you can move the outer-frame (Container of the parallaxed element) slightly up and down to give a cooler parallax effect. <- (default)
