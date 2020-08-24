@@ -21,7 +21,8 @@
     "parallax",
     "scroll",
     "effect",
-    "image"
+    "image",
+    "video"
   ],
   "author": "Muhammad Aneek Rahman <hi@baalish.com>",
   "license": "Apache-2.0",

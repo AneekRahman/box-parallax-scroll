@@ -1,5 +1,5 @@
 class BoxParallaxScroll {
-  constructor({ identifier = ".parallax-element", strechFactor = 2 } = {}) {
+  constructor({ identifier = ".parallax-element", strechFactor = 1 } = {}) {
     // Won't init if window undefined;
     if (!window || !document)
       return console.error("window / document object not found");
@@ -30,6 +30,9 @@ class BoxParallaxScroll {
       newWrapper.style.height = `${elementHeight}px`;
       newWrapper.style.width = `${elementWidth}px`;
       newWrapper.style.overflow = "hidden";
+      newWrapper.style.display = "flex";
+      newWrapper.style.justifyContent = "center";
+      newWrapper.style.alignItems = "center";
 
       // Extend the height of the element
       element.style.height = `${
