@@ -1,10 +1,10 @@
 class BoxParallaxScroll {
-  constructor({ className = ".parallax-element", strechFactor = 2 } = {}) {
+  constructor({ identifier = ".parallax-element", strechFactor = 2 } = {}) {
     // Won't init if window undefined;
     if (!window || !document)
       return console.error("window / document object not found");
     // Set option variables
-    this.className = "." + className;
+    this.identifier = identifier;
     this.strechFactor = strechFactor;
   }
 
@@ -47,7 +47,7 @@ class BoxParallaxScroll {
     if (!window || !document)
       return console.error("window / document object not found");
 
-    const elements = document.querySelectorAll(`${this.className}`);
+    const elements = document.querySelectorAll(this.identifier);
     if (elements.length == 0) return; // Don't listen to anything if there isn't any elements
 
     let wHeight = window.innerHeight;
