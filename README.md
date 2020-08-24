@@ -12,17 +12,21 @@ A library for giving a parallax scrolling effect to elements (div, img, video et
 
 ### Benefits
 
-- Extremely lightweight
+- Extremely lightweight: Only 2.9kB (1.1kB gzipped)
 - No dependency: It's all Pure javascript
 - Ultra smooth: Uses CSS3 Transform. So it can utilize the GPU and hardware acceleration for smooth animation
 
 ### CDN
 
 ```
-<script src="unpkg.com/:package@:version/:file">
+<script src="unpkg.com/bparallax/build/bparallax.js">
 ```
 
 And then use it like this:
+
+```
+<img class="parallax-element" src='...'>
+```
 
 ```
 new BoxParallaxScroll().init();
@@ -31,10 +35,14 @@ new BoxParallaxScroll().init();
 ### NPM Installation
 
 ```
-npm i :package@version --save
+npm i bparallax
 ```
 
 And then use it like this:
+
+```
+<img class="parallax-element" src='...'>
+```
 
 ```
 import BoxParallaxScroll from 'bparallax';
