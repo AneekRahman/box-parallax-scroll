@@ -92,5 +92,5 @@ class BoxParallaxScroll {
     );
   };
 }
-
-export default BoxParallaxScroll;
+// Uncomment before => parcel build
+// export default BoxParallaxScroll;

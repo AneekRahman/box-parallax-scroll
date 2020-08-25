@@ -1,4 +1,4 @@
-# box-parallax-scroll
+# bparallax
 
 ### What is this?
 
@@ -19,7 +19,7 @@ A library for giving a parallax scrolling effect to elements (div, img, video et
 ### CDN
 
 ```
-<script src="unpkg.com/bparallax/build/bparallax.js">
+<script src="https://unpkg.com/bparallax/src/bparallax.js">
 ```
 
 And then use it like this:
