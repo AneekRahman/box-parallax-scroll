@@ -10,7 +10,7 @@
 
 ### What is this?
 
-A library for giving a parallax scrolling effect to elements (div, img, video etc).
+A library for giving a parallax scrolling effect to elements (div, img, video etc). Simply add the default class `.parallax-element` or set your own `identifier: '.your-class'` to any element you want to parallax.
 
 <p style="color: rgba(0,0,0,0.4)">Please help the development by reporting any bugs. Also feel free to contribute to this project. Thanks ❤</p>
 
@@ -62,17 +62,17 @@ new BoxParallaxScroll().init();
 
 ```
 new BoxParallaxScroll({
-  identifier: ".parallax-element", // <- Default & Optional
-  strechFactor: 1 // <- Default & Optional
+  identifier: ".parallax-element", // <- Default | Optional
+  strechFactor: 1 // <- Default | Optional
 }).init();
 ```
 
-- identifier: [string][optional]
-  \- Identify which elements should be parallaxed
-- strechFactor: [int][optional] [value > 0]
-  \- Strength of parallax / How much the element should be parallaxed with the scroll
+- `identifier`: [string]
+  - Identify which elements should be parallaxed
+- `strechFactor`: [int] [value > 0]
+  - Strength of parallax / How much the element should be parallaxed with the scroll
 
-### Achieve the shown example image effect
+### Achieve the shown example gifs effect
 
 ```
 /* Use this for the images you want to parallax */
