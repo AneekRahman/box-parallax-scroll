@@ -1,5 +1,13 @@
 # bparallax
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+
+[npm-image]: https://img.shields.io/npm/v/bparallax.svg
+[npm-url]: https://npmjs.org/package/bparallax
+[downloads-image]: https://img.shields.io/npm/dm/bparallax.svg
+[downloads-url]: https://npmjs.org/package/bparallax
+
 ### What is this?
 
 A library for giving a parallax scrolling effect to elements (div, img, video etc).
@@ -53,7 +61,7 @@ new BoxParallaxScroll().init();
 ### Options
 
 ```
-BoxParallaxScroll({
+new BoxParallaxScroll({
   identifier: ".parallax-element", // <- Default & Optional
   strechFactor: 1 // <- Default & Optional
 }).init();
@@ -61,14 +69,14 @@ BoxParallaxScroll({
 
 - identifier: [string][optional]
   \- Identify which elements should be parallaxed
-- strechFactor: [int][optional] [>0]
-  \- How much the element should be parallaxed with the scroll
+- strechFactor: [int][optional] [value > 0]
+  \- Strength of parallax / How much the element should be parallaxed with the scroll
 
-### To get the examples image effect
+### Achieve the shown example image effect
 
 ```
 /* Use this for the images you want to parallax */
 .parallax-element{
-  object-fit: cover;
+  object-fit: cover; // Fixes image ratio
 }
 ```

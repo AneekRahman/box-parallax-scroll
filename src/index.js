@@ -92,3 +92,5 @@ class BoxParallaxScroll {
     );
   };
 }
+
+export default BoxParallaxScroll;

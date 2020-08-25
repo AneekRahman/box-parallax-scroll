@@ -1,16 +1,12 @@
 {
   "name": "bparallax",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A library for giving a parallax scrolling effect to elements (div, img, video etc)",
-  "main": "./build/bparallax.js",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "node src/bparallax.js",
-    "clean": "rimraf .cache example/test-dist build",
-    "dev": "parcel example/client.html --public-url './' --out-dir example/test-dist",
-    "build": "parcel build src/bparallax.js --out-dir build"
+    "start": "node src/index.js"
   },
   "files": [
-    "build",
     "src"
   ],
   "repository": {
@@ -30,7 +26,6 @@
     "url": "https://github.com/AneekRahman/box-parallax-scroll/issues"
   },
   "homepage": "https://github.com/AneekRahman/box-parallax-scroll#readme",
-  "devDependencies": {
-    "rimraf": "^3.0.2"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
