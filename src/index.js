@@ -45,6 +45,13 @@ class BoxParallaxScroll {
     });
   };
 
+  getOffset = (el) => {
+    var rect = el.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
+  };
+
   init = () => {
     // Won't init if window undefined;
     if (!window || !document)
@@ -63,7 +70,7 @@ class BoxParallaxScroll {
     window.addEventListener("scroll", function (e) {
       scrolled = window.scrollY;
       elements.forEach((element, index) => {
-        const offsetTop = element.offsetTop;
+        const offsetTop = this.getOffset(element).top;
         const wrapperHeight = element.parentNode.clientHeight;
         const windowDiffWrapper = wHeight - wrapperHeight;
         const elementDiffWrapper = element.clientHeight - wrapperHeight;
