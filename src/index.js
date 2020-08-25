@@ -67,7 +67,7 @@ class BoxParallaxScroll {
     this.initiateAllElements(elements);
 
     // Listen to scroll event and transform
-    window.addEventListener("scroll", function (e) {
+    window.addEventListener("scroll", (e) => {
       scrolled = window.scrollY;
       elements.forEach((element, index) => {
         const offsetTop = this.getOffset(element).top;
