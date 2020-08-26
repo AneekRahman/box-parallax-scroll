@@ -1,8 +1,13 @@
 class BoxParallaxScroller {
-  constructor({ identifier = ".parallax-element", strechFactor = 1 } = {}) {
+  constructor({ identifier = ".parallax-element", strechFactor = 0.2 } = {}) {
     // Won't init if window undefined;
     if (!window || !document)
       return console.error("window / document object not found");
+    // Check edge cases
+    if (strechFactor > 1 || strechFactor < 0)
+      return console.error(
+        "BoxParallaxScroll: strechFactor must be between 0 - 1"
+      );
     // Set option variables
     this.identifier = identifier;
     this.strechFactor = strechFactor;
@@ -61,15 +66,17 @@ class BoxParallaxScroller {
       const windowDiffWrapper = wHeight - wrapperHeight;
       const elementDiffWrapper = element.clientHeight - wrapperHeight;
 
+      if (index === 0)
+        console.log(
+          `wrapperHeight: ${wrapperHeight} element.clientHeight: ${element.clientHeight}`
+        );
+
       let translatePercentage =
         (scrolled - offsetTop) /
         (elementDiffWrapper + Math.abs(windowDiffWrapper));
       if (windowDiffWrapper > elementDiffWrapper) {
         translatePercentage = (scrolled - offsetTop) / windowDiffWrapper;
       }
-
-      if (index == 0)
-        console.log(`translatePercentage: ${translatePercentage}`);
 
       element.style.transform = `translateY(${
         translatePercentage * elementDiffWrapper
@@ -82,6 +89,7 @@ class BoxParallaxScroller {
     if (!window || !document)
       return console.error("window / document object not found");
 
+    if (!this.identifier) return;
     const elements = document.querySelectorAll(this.identifier);
     this.elements = elements;
     if (elements.length == 0) return; // Don't listen to anything if there isn't any elements
