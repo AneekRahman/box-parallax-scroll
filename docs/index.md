@@ -1,37 +1,93 @@
-## Welcome to GitHub Pages
+# BoxParallaxScroll
 
-You can use the [editor on GitHub](https://github.com/AneekRahman/box-parallax-scroll/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[npm-image]: https://img.shields.io/npm/v/bparallax.svg
+[npm-url]: https://npmjs.org/package/bparallax
+[downloads-image]: https://img.shields.io/npm/dm/bparallax.svg
+[downloads-url]: https://npmjs.org/package/bparallax
 
-### Markdown
+### What is this?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+A library for giving a parallax scrolling effect to elements (div, img, video etc). Simply add the default class `.parallax-element` or set your own `identifier: '.your-class'` to any element you want to parallax.
 
-```markdown
-Syntax highlighted code block
+<p style="color: rgba(0,0,0,0.4)">Please help the development by reporting any bugs. Also feel free to contribute to this project. Thanks ❤</p>
 
-# Header 1
-## Header 2
-### Header 3
+### Example
 
-- Bulleted
-- List
+![Parallax scroll example](readme/example.gif "Parallax scroll example")
 
-1. Numbered
-2. List
+### Benefits
 
-**Bold** and _Italic_ and `Code` text
+- Extremely lightweight: Only 2.9kB (1.1kB gzipped)
+- No dependency: It's all Pure javascript
+- Ultra smooth: Uses CSS3 Transform. So it can utilize the GPU and hardware acceleration for smooth animation
 
-[Link](url) and ![Image](src)
+### CDN
+
+```
+<script src="https://unpkg.com/bparallax/src/bparallax.js">
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### NPM Installation
 
-### Jekyll Themes
+```
+npm i bparallax
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AneekRahman/box-parallax-scroll/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Usages
 
-### Support or Contact
+Your parallax elements:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+<img class="parallax-element" src='...'>
+// or
+<video class="parallax-element">
+  <source src="...">
+</video>
+// or
+<div class="parallax-element" style="background-image: url(...)">
+```
+
+Then in javascript:
+
+```
+// If you use the CDN
+BoxParallaxScroll().init();
+```
+
+```
+// If you use NPM or a Framework
+import BoxParallaxScroll from 'bparallax';
+
+BoxParallaxScroll().init();
+```
+
+### Options
+
+```
+// Default values
+BoxParallaxScroll({
+  identifier: ".parallax-element",
+  strechFactor: 0.2
+}).init();
+```
+
+- `identifier`: [string]
+  - Identify which elements should be parallaxed
+- `strechFactor`: [float] [0 to 1]
+  - Strength of parallax / How much the element should be parallaxed with the scroll. Can be any value from 0 to 1
+
+### Under the hood
+
+BoxParallaxScroll creates a wrapper with the class `.wrapper` and sets the parallaxable element as it's child.
+
+### Achieve the shown example gifs effect
+
+```
+/* Use this for the images you want to parallax */
+.parallax-element{
+  object-fit: cover; // Fixes image ratio
+}
+```
