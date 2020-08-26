@@ -16,7 +16,7 @@ A library for giving a parallax scrolling effect to elements (div, img, video et
 
 ### Example
 
-![Parallax scroll example](readme/example.gif "Parallax scroll example")
+![Parallax scroll example](../readme/example.gif "Parallax scroll example")
 
 ### Benefits
 
