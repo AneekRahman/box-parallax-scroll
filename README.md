@@ -37,7 +37,7 @@ And then use it like this:
 ```
 
 ```
-new BoxParallaxScroll().init();
+BoxParallaxScroll().init();
 ```
 
 ### NPM Installation
@@ -55,22 +55,23 @@ And then use it like this:
 ```
 import BoxParallaxScroll from 'bparallax';
 
-new BoxParallaxScroll().init();
+BoxParallaxScroll().init();
 ```
 
 ### Options
 
 ```
+// Default values
 new BoxParallaxScroll({
-  identifier: ".parallax-element", // <- Default | Optional
-  strechFactor: 1 // <- Default | Optional
+  identifier: ".parallax-element",
+  strechFactor: 0.2
 }).init();
 ```
 
 - `identifier`: [string]
   - Identify which elements should be parallaxed
-- `strechFactor`: [int] [value > 0]
-  - Strength of parallax / How much the element should be parallaxed with the scroll
+- `strechFactor`: [float] [0 to 1]
+  - Strength of parallax / How much the element should be parallaxed with the scroll. Can be any value from 0 to 1
 
 ### Achieve the shown example gifs effect
 

@@ -1,4 +1,4 @@
-class BoxParallaxScroll {
+class BoxParallaxScroller {
   constructor({ identifier = ".parallax-element", strechFactor = 1 } = {}) {
     // Won't init if window undefined;
     if (!window || !document)
@@ -52,52 +52,67 @@ class BoxParallaxScroll {
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
   };
 
+  onScrolled = (e) => {
+    const wHeight = this.wHeight;
+    let scrolled = window.scrollY;
+    this.elements.forEach((element, index) => {
+      const offsetTop = this.getOffset(element).top;
+      const wrapperHeight = element.parentNode.clientHeight;
+      const windowDiffWrapper = wHeight - wrapperHeight;
+      const elementDiffWrapper = element.clientHeight - wrapperHeight;
+
+      let translatePercentage =
+        (scrolled - offsetTop) /
+        (elementDiffWrapper + Math.abs(windowDiffWrapper));
+      if (windowDiffWrapper > elementDiffWrapper) {
+        translatePercentage = (scrolled - offsetTop) / windowDiffWrapper;
+      }
+
+      if (index == 0)
+        console.log(`translatePercentage: ${translatePercentage}`);
+
+      element.style.transform = `translateY(${
+        translatePercentage * elementDiffWrapper
+      }px)`;
+    });
+  };
+
   init = () => {
     // Won't init if window undefined;
     if (!window || !document)
       return console.error("window / document object not found");
 
     const elements = document.querySelectorAll(this.identifier);
+    this.elements = elements;
     if (elements.length == 0) return; // Don't listen to anything if there isn't any elements
 
-    let wHeight = window.innerHeight;
-    let scrolled = 0;
+    const wHeight = window.innerHeight;
+    this.wHeight = wHeight;
 
     // Initiate the elements
     this.initiateAllElements(elements);
 
+    // Run once
+    this.onScrolled();
+
     // Listen to scroll event and transform
-    window.addEventListener("scroll", (e) => {
-      scrolled = window.scrollY;
-      elements.forEach((element, index) => {
-        const offsetTop = this.getOffset(element).top;
-        const wrapperHeight = element.parentNode.clientHeight;
-        const windowDiffWrapper = wHeight - wrapperHeight;
-        const elementDiffWrapper = element.clientHeight - wrapperHeight;
-
-        let translatePercentage =
-          (scrolled - offsetTop) /
-          (elementDiffWrapper + Math.abs(windowDiffWrapper));
-        if (windowDiffWrapper > elementDiffWrapper) {
-          translatePercentage = (scrolled - offsetTop) / windowDiffWrapper;
-        }
-
-        element.style.transform = `translateY(${
-          translatePercentage * elementDiffWrapper
-        }px)`;
-      });
-    });
+    window.addEventListener("scroll", this.onScrolled);
 
     // Re-evaluate window size
     window.addEventListener(
       "resize",
       (e) => {
         // Set the height again
-        wHeight = window.innerHeight;
+        this.wHeight = window.innerHeight;
       },
       false
     );
   };
 }
+
+const BoxParallaxScroll = function (args) {
+  const bps = new BoxParallaxScroller(args);
+  return bps;
+};
 
 export default BoxParallaxScroll;

@@ -1,1 +1,1 @@
-new BoxParallaxScroll().init();
+BoxParallaxScroll({ strechFactor: 1 }).init();

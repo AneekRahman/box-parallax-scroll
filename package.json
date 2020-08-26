@@ -1,6 +1,6 @@
 {
   "name": "bparallax",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A library for giving a parallax scrolling effect to elements (div, img, video etc)",
   "main": "./src/index.js",
   "scripts": {
