@@ -1,6 +1,6 @@
 {
   "name": "bparallax",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A library giving parallax scrolling effects to elements (div, img, video etc). ",
   "main": "./src/index.js",
   "scripts": {
@@ -28,12 +28,12 @@
     "css",
     "transform"
   ],
-  "author": "Muhammad Aneek Rahman <hi@baalish.com>",
+  "author": "Muhammad Aneek Rahman <baalish.mail@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/AneekRahman/box-parallax-scroll/issues"
   },
-  "homepage": "https://github.com/AneekRahman/box-parallax-scroll#readme",
+  "homepage": "https://aneekrahman.github.io/box-parallax-scroll/",
   "devDependencies": {},
   "dependencies": {}
 }
