@@ -27,7 +27,7 @@ A library for giving a parallax scrolling effect to elements (div, img, video et
 ### CDN
 
 ```
-<script src="https://unpkg.com/bparallax/src/bparallax.js">
+<script src="https://unpkg.com/bparallax@1.0.10/src/bparallax.js">
 ```
 
 ### NPM Installation
